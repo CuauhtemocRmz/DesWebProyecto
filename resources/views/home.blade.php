@@ -14,16 +14,16 @@
                         </div>
                     @endif
 
-                    {{ __('Iniciaste sesión!') }}
+                    {{ __('Inicio de seccion!') }}
                 </div>
 
             </div>
             <h1 class="text-primary">uwu</h1>
             @if ( Auth::user()-> rolid == 2)
-               Tu rol es usuario
+               Tu rol es la del  usuario
             @endif
             @if ( Auth::user()-> rolid == 1)
-               Tu rol es admin
+               Tu rol es del admin
             @endif
 
         </div>
