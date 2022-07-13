@@ -57,19 +57,19 @@
 
                         @else
                         <li class="nav-item">
-                            <a class="nav-link text-white mx-2" href="#">{{ __('Inicio') }}</a>
+                            <a class="nav-link text-white mx-2" href="/inicio">{{ __('Inicio') }}</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-white mx-2" href="#">{{ __('Areas') }}</a>
+                            <a class="nav-link text-white mx-2" href="/areas">{{ __('Areas') }}</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-white mx-2 " href="#">{{ __('Agendar') }}</a>
+                            <a class="nav-link text-white mx-2 " href="/agendar">{{ __('Agendar') }}</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-white mx-2" href="#">{{ __('Nosotros') }}</a>
+                            <a class="nav-link text-white mx-2" href="/nosotros">{{ __('Nosotros') }}</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-white mx-2 " href="#">{{ __('Contacto') }}</a>
+                            <a class="nav-link text-white mx-2 " href="/contacto">{{ __('Contacto') }}</a>
                         </li>
                         <li class="nav-item dropdown mx-4 ">
                             <a id="navbarDropdown" class="nav-link dropdown-toggle text-white" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
@@ -101,4 +101,4 @@
     </div>
 </body>
 
-</html>
+</html>     
