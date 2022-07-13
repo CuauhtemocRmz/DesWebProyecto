@@ -1,5 +1,6 @@
 <!doctype html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -19,6 +20,7 @@
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
+
 <body>
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-dark bg-dark shadow-sm">
@@ -37,44 +39,56 @@
                     </ul>
 
                     <!-- Right Side Of Navbar -->
-                    <ul class="navbar-nav ms-auto">
+                    <ul class="navbar-nav ms-auto ">
                         <!-- Authentication Links -->
                         @guest
-                            @if (Route::has('login'))
-                                <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('login') }}">{{ __('Acceder') }}</a>
-                                </li>
-                            @endif
+                        @if (Route::has('login'))
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('login') }}">{{ __('Acceder') }}</a>
+                        </li>
+                        @endif
 
-                            @if (Route::has('register'))
-                                <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('register') }}">{{ __('Registro') }}</a>
-                                </li>
-                            @endif
+                        @if (Route::has('register'))
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('register') }}">{{ __('Registro') }}</a>
+                        </li>
+                        @endif
 
-                            <li class="nav-item">
-                                    <a class="nav-link" href="#">{{ __('') }}</a>
-                                </li>   
+
                         @else
-                            <li class="nav-item dropdown ">
-                                <a id="navbarDropdown" class="nav-link dropdown-toggle text-white" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                    {{ Auth::user()-> nombres  }} {{ Auth::user()-> apellidos  }}
+                        <li class="nav-item">
+                            <a class="nav-link text-white mx-2" href="#">{{ __('Inicio') }}</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white mx-2" href="#">{{ __('Areas') }}</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white mx-2 " href="#">{{ __('Agendar') }}</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white mx-2" href="#">{{ __('Nosotros') }}</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white mx-2 " href="#">{{ __('Contacto') }}</a>
+                        </li>
+                        <li class="nav-item dropdown mx-4 ">
+                            <a id="navbarDropdown" class="nav-link dropdown-toggle text-white" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                {{ Auth::user()-> nombres  }} {{ Auth::user()-> apellidos  }}
+                            </a>
 
-
+                            <div class="dropdown-menu dropdown-menu-end bg-dark" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item text-white bg-dark " href="{{ route('logout') }}" onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                    {{ __('Salir') }}
                                 </a>
 
-                                <div class="dropdown-menu dropdown-menu-end bg-dark" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item text-white bg-dark " href="{{ route('logout') }}"
-                                       onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
-                                        {{ __('Salir') }}
-                                    </a>
+                                <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                    @csrf
+                                </form>
+                            </div>
+                        </li>
 
-                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                                        @csrf
-                                    </form>
-                                </div>
-                            </li>
+
                         @endguest
                     </ul>
                 </div>
@@ -86,4 +100,5 @@
         </main>
     </div>
 </body>
+
 </html>
